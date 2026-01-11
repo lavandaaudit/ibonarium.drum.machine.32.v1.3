@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>IBONARIUM • DRUM MACHINE</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="rack-mount">
+            <header>
+                <h1>IBONARIUM</h1>
+
+                <div class="header-controls">
+                    <div class="knob-box">
+                        <div class="knob-wrap">
+                            <div class="knob" id="knob-bpm" data-min="60" data-max="200" data-value="120"></div>
+                        </div>
+                        <div class="knob-label">BPM</div>
+                    </div>
+                    <div class="bpm-display">
+                        <span id="bpm-value">120</span>
+                    </div>
+
+                    <div class="knob-box">
+                        <div class="knob-wrap">
+                            <div class="knob" id="knob-master-vol" data-min="0" data-max="1" data-value="0.8"></div>
+                        </div>
+                        <div class="knob-label">VOL</div>
+                    </div>
+
+                    <div class="isolator-rack">
+                        <div class="knob-box">
+                            <div class="knob-wrap">
+                                <div class="knob" id="knob-master-low" data-min="-20" data-max="6" data-value="0"></div>
+                            </div>
+                            <div class="knob-label">LOW</div>
+                        </div>
+                        <div class="knob-box">
+                            <div class="knob-wrap">
+                                <div class="knob" id="knob-master-mid" data-min="-20" data-max="6" data-value="0"></div>
+                            </div>
+                            <div class="knob-label">MID</div>
+                        </div>
+                        <div class="knob-box">
+                            <div class="knob-wrap">
+                                <div class="knob" id="knob-master-high" data-min="-20" data-max="6" data-value="0">
+                                </div>
+                            </div>
+                            <div class="knob-label">HIGH</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="transport-controls">
+                    <button id="btn-play">PLAY</button>
+                    <button id="btn-stop">STOP</button>
+                </div>
+            </header>
+
+            <div class="section-box">
+                <div class="section-label">DRUM PATTERNS</div>
+                <div id="drum-rack-container"></div>
+            </div>
+
+            <div class="section-box">
+                <div class="section-label">MELODIC SEQUENCERS</div>
+                <div id="melodic-rack-container"></div>
+            </div>
+
+            <div class="bottom-block">
+                <div id="fx-rack-container" class="fx-rack"></div>
+                <div class="keyboard-section">
+                    <div id="keyboard-container" class="keyboard"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="js/app.js"></script>
+</body>
+
+</html>

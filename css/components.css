@@ -1,0 +1,204 @@
+/* Component Styles - Compact Scaling */
+
+/* --- Master Section --- */
+.master-controls {
+    display: flex;
+    gap: 12px;
+    /* Shrunk */
+    align-items: center;
+}
+
+@media (max-width: 600px) {
+    .master-controls {
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: space-between;
+    }
+}
+
+.transport-controls button {
+    background: #080808;
+    border: 1px solid #222;
+    color: #666;
+    padding: 6px 12px;
+    /* Shrunk */
+    font-size: 0.7rem;
+    /* Shrunk */
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.transport-controls button:hover {
+    color: #aaa;
+    border-color: #333;
+}
+
+.transport-controls button.active {
+    color: var(--neon-green);
+    border-color: var(--neon-green);
+    box-shadow: 0 0 5px var(--neon-green);
+}
+
+/* --- Drum Rack --- */
+.drum-rack {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-bottom: 5px;
+}
+
+.drum-channel {
+    display: flex;
+    gap: 8px;
+    background: linear-gradient(90deg, #090910 0%, #050508 100%);
+    padding: 2px 5px;
+    border-radius: 2px;
+    border: 1px solid #1a1a25;
+    align-items: center;
+}
+
+.drum-channel.active-synth {
+    border-color: var(--neon-blue);
+    background: linear-gradient(90deg, #0e1a25 0%, #050508 100%);
+    box-shadow: inset 0 0 10px rgba(0, 243, 255, 0.1);
+}
+
+.melodic-step {
+    font-size: 0.4rem;
+    color: var(--neon-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.drum-header {
+    width: 50px;
+    /* Shrunk */
+    font-size: 0.5rem;
+    /* Shrunk */
+    color: var(--neon-blue);
+    font-weight: bold;
+    text-align: right;
+    padding-right: 4px;
+    white-space: nowrap;
+}
+
+.drum-controls {
+    display: flex;
+    gap: 1px;
+}
+
+.sequencer-steps {
+    display: flex;
+    gap: 1px;
+    /* Minimal gap */
+    margin-left: 6px;
+    flex: 1;
+    overflow-x: auto;
+}
+
+/* Hide scrollbar for steps */
+.sequencer-steps::-webkit-scrollbar {
+    height: 3px;
+}
+
+.step-btn {
+    width: 22px;
+    /* Shrunk from 25 */
+    height: 28px;
+    /* Shrunk from 35 */
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 1px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.step-btn.active {
+    background: var(--neon-amber);
+    box-shadow: 0 0 3px var(--neon-amber);
+    border-color: #fff;
+}
+
+.step-btn.playing {
+    border-color: #fff;
+    background: #333;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+}
+
+/* --- Melodic Section --- */
+.melodic-ctrl-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#synth-select {
+    background: #000;
+    color: var(--neon-blue);
+    border: 1px solid #222;
+    padding: 3px;
+    font-size: 0.7rem;
+    height: 25px;
+}
+
+.synth-knobs-compact {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.keyboard {
+    display: flex;
+    height: 180px;
+    /* LARGE, prominent keyboard */
+    margin-top: 10px;
+    min-width: 600px;
+    background: #000;
+    padding: 2px;
+    border: 2px solid #222;
+    border-radius: 4px;
+}
+
+.key {
+    flex: 1;
+    border: 1px solid #000;
+    background: linear-gradient(180deg, #fff 0%, #bbb 100%);
+    border-radius: 0 0 4px 4px;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    transition: background 0.1s, transform 0.05s;
+}
+
+.key.black {
+    background: linear-gradient(180deg, #333 0%, #000 100%);
+    height: 60%;
+    width: 65%;
+    margin-left: -32.5%;
+    margin-right: -32.5%;
+    z-index: 2;
+    border-color: #000;
+    border-radius: 0 0 3px 3px;
+}
+
+.key:active,
+.key.pressed {
+    background: linear-gradient(180deg, var(--neon-blue) 0%, #0055ff 100%);
+    box-shadow: 0 0 20px var(--neon-blue);
+    transform: translateY(2px);
+}
+
+.key.black:active,
+.key.black.pressed {
+    background: linear-gradient(180deg, var(--neon-purple) 0%, #5500aa 100%);
+    box-shadow: 0 0 20px var(--neon-purple);
+}
+
+#keyboard-scroll-wrap {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 2px;
+}
