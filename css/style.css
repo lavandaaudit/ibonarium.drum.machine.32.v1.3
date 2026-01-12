@@ -402,32 +402,69 @@ button:hover {
         height: auto;
         min-height: 100vh;
         overflow-y: visible;
+        overflow-x: hidden;
     }
 
     .rack-mount {
         overflow-y: visible;
+        overflow-x: hidden;
     }
 
     .step-btn {
         height: 32px;
         min-width: 28px;
+        flex-shrink: 0;
     }
 
     .drum-channel {
         height: auto;
         min-height: 40px;
-    }
-
-    .sequencer-steps {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
     }
 
+    .sequencer-steps {
+        overflow-x: visible;
+        -webkit-overflow-scrolling: touch;
+        flex-wrap: nowrap;
+        min-width: max-content;
+    }
+
+    /* Keyboard visible and scrollable on mobile */
+    .bottom-block {
+        flex-direction: column;
+        min-height: 200px;
+    }
+
+    .keyboard-section {
+        display: flex;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        min-height: 120px;
+    }
+
     .keyboard {
         min-width: 800px;
+        display: flex;
+    }
+
+    .fx-rack {
+        width: 100%;
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .section-box {
         overflow-y: visible;
+        overflow-x: hidden;
+    }
+
+    /* Ensure drum rack container allows horizontal scroll */
+    #drum-rack-container {
+        overflow-x: visible;
+    }
+
+    #melodic-rack-container {
+        overflow-x: visible;
     }
 }
