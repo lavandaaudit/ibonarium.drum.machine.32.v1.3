@@ -391,13 +391,43 @@ button:hover {
 }
 
 @media (max-width: 1000px) {
+    body {
+        overflow: auto;
+        height: auto;
+        align-items: flex-start;
+    }
+
     .container {
         width: 100vw;
         height: auto;
-        overflow-y: auto;
+        min-height: 100vh;
+        overflow-y: visible;
+    }
+
+    .rack-mount {
+        overflow-y: visible;
+    }
+
+    .step-btn {
+        height: 32px;
+        min-width: 28px;
+    }
+
+    .drum-channel {
+        height: auto;
+        min-height: 40px;
+    }
+
+    .sequencer-steps {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .keyboard {
         min-width: 800px;
+    }
+
+    .section-box {
+        overflow-y: visible;
     }
 }
